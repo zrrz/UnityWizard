@@ -59,7 +59,7 @@ public class Player : MonoBehaviour {
 			if(Physics.Raycast(cameraObj.transform.position, cameraObj.transform.forward, out hit, 500f)) {
 				Vector3 target = hit.point;
 				GameObject t_obj = (GameObject)Instantiate(projectile, shootPos.position, shootPos.rotation);
-				t_obj.GetComponent<Projectile>().dir = (shootPos.position - target).normalized;
+				t_obj.GetComponent<Projectile>().dir = (target - shootPos.position).normalized;
 			}
 		}
 	}
